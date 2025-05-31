@@ -1,0 +1,16 @@
+{
+    "army_name" : "Black Templars",
+    "units":[
+        {
+            "unit" : "Marshal",
+            "move" : "6\"",
+            "toughness" : 4,
+            "armor save" : "3+",
+            "wound" : 5,
+            "leadership" : "6+",
+            "objective" : 1
+        }
+
+
+    ]
+}
