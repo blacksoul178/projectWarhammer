@@ -15,13 +15,6 @@ from attack_properties import AttackProperties
 attack_data = AttackProperties() #importing AttackProperties values 
 
 
-
-#Stats related to wound rolls:
-strength = 0  #S
-armor_pen = 0  #AP
-toughness = 0  #t
-
-
 #UI
 
 class DiceRollerApp(App):
@@ -157,9 +150,6 @@ class DiceRollerApp(App):
         attack_roll_button.bind(on_release=self.click_attack_roll_button)
         
         
-        #dice_roller_2 = BoxLayout(orientation='horizontal', spacing=10)
-        
-        
         dice_roller.add_widget(attacks_layout_label) # add all 3 vertical text Input labels to the box layout
         dice_roller.add_widget(attacks_adjustment_buttons) # add all 3 vertical adjustments buttons to the box layout
         dice_roller.add_widget(attack_roll_button) # Add Attack roll button in the final column     
@@ -171,7 +161,7 @@ class DiceRollerApp(App):
 
 
 
-        ### Real time input update logic
+    ### Real time input update logic
          
         
     def real_time_input_text(self,instance, value):    #real time updating values for attacks input
@@ -208,7 +198,8 @@ class DiceRollerApp(App):
 
 
     def click_attack_roll_button(self, instance):       #attack rolling call function
-        attack_roll(attack_data.attacks_number, attack_data.units_number, attack_data.weapon_skill, attack_data.attack_modifier)  
+        attack_roll(attack_data.attacks_number, attack_data.units_number, attack_data.weapon_skill, attack_data.attacks_number_modifier)  
+        
         
     def click_increment_button(self, increment_area, instance): #increment button action
         match increment_area :
@@ -221,8 +212,8 @@ class DiceRollerApp(App):
                     attack_data.weapon_skill == 6
                 else: attack_data.weapon_skill += 1
                 
-            # case self.attack_modifier_input:
-            #     attack_data.attack_modifier += 1
+            # case self.attacks_number_modifier_input:
+            #     attack_data.attacks_number_modifier += 1
             
         
     def click_decrement_button(self, decrement_area, instance): #decrement button action and conditionals

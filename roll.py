@@ -8,6 +8,12 @@ def attack_roll(attacks, units, weapon_skill, attack_modifier=0): #attacks modif
     if attacks < 1: 
         print("Attacks must be 1 or higher") #break if attacks < 1
         return
+    if units < 1 : 
+        print("Must have at least 1 unit attacking") 
+        return
+    if (weapon_skill < 1 or weapon_skill >6): 
+        print("Weapon skill must be between 1-6") 
+        return
 
     total_dices = attacks*units  #how many dice to rolls = how many units are attacking multiplied by how many attacks they do
     roll_count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0} 
@@ -35,6 +41,6 @@ def attack_roll(attacks, units, weapon_skill, attack_modifier=0): #attacks modif
                 print(f"{roll} : {roll_count[roll]}")
     
     print("***** End of roll *****")    
-    print(f"attacks higher than {weapon_skill} hit")
+    print(f"attacks of {weapon_skill} or higher hit")
     print(f"total hits: {hits} ")
         

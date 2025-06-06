@@ -10,3 +10,8 @@ class AttackProperties(BoxLayout):
     # Rapid fire x = x extra attack if unit under 12"
     # Sustained Hits x = on 6 roll x extra attack rolls
     
+
+class WoundProperties(BoxLayout) : #Stats related to wound rolls:
+    strength = 0  #S
+    armor_pen = 0  #AP
+    toughness = 0  #t
