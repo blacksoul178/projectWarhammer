@@ -13,6 +13,7 @@ def attack_roll(attacks, units, weapon_skill, attack_modifier=0): #attacks modif
     roll_count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0} 
     hits = 0 #hit counter
     
+    print("")
     print("***** Start of roll *****")
     print(f"{units} units doing each {attacks} attacks, total dice count: {total_dices}")
     
@@ -24,8 +25,15 @@ def attack_roll(attacks, units, weapon_skill, attack_modifier=0): #attacks modif
             if dice >= weapon_skill: #if dice is higher than or equal to the hit counter, increment the hit count (for simplified rolls)
                 hits += 1 
             
-    for roll in roll_count:
-        print(f"{roll} : {roll_count[roll]}")
+    
+    if config.full_detail == True:      #if True, will return all dices count, even if zero
+        for roll in roll_count:     
+            print(f"{roll} : {roll_count[roll]}")  
+    else:
+        for roll in roll_count: ## returns the dice count if they are not 0
+            if roll_count[roll] > 0:
+                print(f"{roll} : {roll_count[roll]}")
+    
     print("***** End of roll *****")    
     print(f"attacks higher than {weapon_skill} hit")
     print(f"total hits: {hits} ")

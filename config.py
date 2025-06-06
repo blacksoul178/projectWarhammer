@@ -1,1 +1,1 @@
-full_detail = True #Return full dice rolls if Set to true, else will simply return the desired values (values that hit/wound/save)
+full_detail = False #Return full dice rolls if Set to true, else will simply return the desired values (values that hit/wound/save)
